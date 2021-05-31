@@ -176,7 +176,27 @@ var Game = function () {
           }
         }
       }
-    }]);
+    }, {
+    key: "retinalized",
+    value: function retinalized() {
+      this.stage.width = this.stage.width;
+      this.stage.height = this.stage.height;
+
+      var ratio = window.devicePixelRatio;
+      if (ratio === undefined) {
+        return;
+      }
+
+      this.canvas.setAttribute('width', Math.round(this.stage.width * ratio));
+      this.canvas.setAttribute('height', Math.round(this.stage.height * ratio));
+
+      this.stage.scaleX = this.stage.scaleY = ratio;
+
+      // set CSS style
+      this.canvas.style.width = this.stage.width + "px";
+      this.canvas.style.height = this.stage.height + "px";
+    }
+  }]);
 
     return Game;
 }();
