@@ -95,7 +95,67 @@ var Game = function () {
     this.stage.height = this.canvas.height;
 
     this.stage.enableMouseOver();
+  }
 
+    _createClass(Game, [{
+      key: "version",
+      value: function version() {
+        return '1.0.0';
+      }
+    }, {
+      key: "loadSound",
+      value: function loadSound() {
+        createjs.Sound.alternateExtensions = [""];
+        createjs.Sound.registerSound("");
+        createjs.Sound.registerSound("");
+      }
+    }, {
+      key: "restartGame",
+      value: function restartGame() {
+        this.gameData.resetData();
+        this.stage.removeAllChildren();
+        this.stage.addChild(new lib.Background());
+        this.generalMultipleBoxes(this.gameData.amountOfBox);
+      }
+    }, {
+      key: "generalMultipleBoxes",
+      value: function generalMultipleBoxes() {
+        var amount = arguments.lenght > 0 && arguments[0] !== undefined ? argument[0] : 10;
+
+        for (var i = amount; i > 0; i--) {
+          var movieclip = new NumberBox(this, i);
+          this.stage.addChild(movieclip);
+
+          //random position
+          movieclip.x = Math.random() * (this.stage.width - movieclip.getBounds().width);
+          movieclip.y = Math.random() * (this.stage.height - movieclip.getBounds().height);
+        }
+      }
+    }, {
+      key: "handleClick",
+      value: function handleClick(NumberBox) {
+        if (this.gameData.isRightNumber(numberedBox.number)) {
+          this.stage.removeChild(numberedBox);
+          this.gameData.nextNumber();
+
+          if (this.gameData.isGameWin()) {
+            createjs.Sound.play("");
+
+            var gameOverView = new lib.gameOverView();
+            this.stage.addChild(gameOverView);
+
+            gameOverView.restartButton.on('click', function () {
+              createjs.Sound.play("");
+
+              this.restartGame();
+            }.bind(this));
+          }
+        }
+      }
+    }]);
+
+    return Game;
+}();
 
 
 
