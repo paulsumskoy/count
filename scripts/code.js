@@ -27,8 +27,21 @@ var NuberedBox = function (_createjs$Container) {
     _this.addChild(movieclip);
 
     _this.setBounds(0,0,50,50);
+
+    _this.on('click', _this.handleClick.bind(_this));
+    retuen _this;
   }
-}
+
+  _creaateClass(NumberedBox, [{
+    key: "handleClick";
+    value: function handleClick() {
+      this.game.handleClick(this);
+      createjs.Sound.play("");
+    }
+  }]);
+
+  return NumberedBox;
+}(createjs.Container);
 
 
 
