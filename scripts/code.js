@@ -45,6 +45,58 @@ var NuberedBox = function (_createjs$Container) {
 }(createjs.Container);
 
 
+// controls the game data
+
+var GameData = function () {
+  function GameData() {
+    _classCallCheck(this, GameData);
+
+    this.amountOfBox = 20;
+    this.resetData();
+  }
+
+  _createClass(GameData, [{
+    key: "resetData",
+    value: function resetData() {
+      this.currentNumber = 1;
+    }
+  }, {
+    key: "nextNumber",
+    value: function nextNumber() {
+      this.currentNumber += 1;
+    }
+  }, {
+    key: "isRightNumber",
+    value: function isRightNumber(number) {
+      return number === this.currentNumber;
+    }
+  }, {
+    key: "isGameWin",
+    value: function isGameWin() {
+      return this.currentNumber > this.amountOfBox;
+    }
+  }]);
+
+  return GameData;
+}();
+
+var Game = function () {
+  function Game() {
+    _classCallCheck(this, Game);
+
+    console.log("Welcome to the game. Version " + this.version());
+
+    this.loadSound();
+
+    this.canvas = document.getElementById("game-canvas");
+    this.stage = new createjs.Stage(this.canvas);
+
+    this.stage.width = this.canvas.width;
+    this.stage.height = this.canvas.height;
+
+    this.stage.enableMouseOver();
+
+
 
 
 //start the game
