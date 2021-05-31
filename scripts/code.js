@@ -28,12 +28,13 @@ var NuberedBox = function (_createjs$Container) {
 
     _this.setBounds(0,0,50,50);
 
+    //handle click/tap
     _this.on('click', _this.handleClick.bind(_this));
-    retuen _this;
+    return _this;
   }
 
-  _creaateClass(NumberedBox, [{
-    key: "handleClick";
+  _createClass(NumberedBox, [{
+    key: "handleClick",
     value: function handleClick() {
       this.game.handleClick(this);
       createjs.Sound.play("");
