@@ -25,7 +25,7 @@ var NuberedBox = function (_createjs$Container) {
     var movieclip = new lib.NumberBox();
     movieclip.numberText.text = number;
 
-    new createjs.ButtonHelper(movieclip, 1, 1, 2, false, new lib.NumberBox(), 3);
+    new createjs.ButtonHelper(movieclip, 0, 1, 2, false, new lib.NumberBox(), 3);
 
     movieclip.numberText.font = "30px Oswald";
     movieclip.numberText.textBaseline = "alphabet";
@@ -103,6 +103,22 @@ var Game = function () {
     this.stage.height = this.canvas.height;
 
     this.stage.enableMouseOver();
+
+    // enable tap on touch divice
+    createjs.Touch.enable(this.stage);
+
+    // enable retina screen
+    this.retinalized();
+
+    createjs.Ticker.setFPS(60);
+
+    // game related initialization
+    this.gameData = new GameData();
+
+    // keep re-drawing the stage.
+    createjs.Ticker.on("tick", this.stage);
+
+    this.restartGame();
   }
 
     _createClass(Game, [{
