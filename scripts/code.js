@@ -45,7 +45,7 @@ var NuberedBox = function (_createjs$Container) {
     key: "handleClick",
     value: function handleClick() {
       this.game.handleClick(this);
-      createjs.Sound.play("");
+      createjs.Sound.play("Power Up");
     }
   }]);
 
@@ -129,9 +129,9 @@ var Game = function () {
     }, {
       key: "loadSound",
       value: function loadSound() {
-        createjs.Sound.alternateExtensions = [""];
-        createjs.Sound.registerSound("");
-        createjs.Sound.registerSound("");
+        createjs.Sound.alternateExtensions = ["ogg", "wav"];
+        createjs.Sound.registerSound("soundfx/Powerup.aiff", "Power Up");
+        createjs.Sound.registerSound("soundfx/Gameover.aiff", "Game Over");
       }
     }, {
       key: "restartGame",
@@ -169,7 +169,7 @@ var Game = function () {
             this.stage.addChild(gameOverView);
 
             gameOverView.restartButton.on('click', function () {
-              createjs.Sound.play("");
+              createjs.Sound.play("Power Up");
 
               this.restartGame();
             }.bind(this));
