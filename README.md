@@ -1,3 +1,3 @@
 # Countgame
-Курсова робота. Сумський Павло ІП-94
+Mini count game.
 
