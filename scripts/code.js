@@ -208,7 +208,7 @@ let Game = function () {
 let game = new Game();
 
 function ajaxGet(){
-  var request = new XMLHttpRequest();
+  let request = new XMLHttpRequest();
   request.open('GET', '/ip.php');
   request.send();
 }
