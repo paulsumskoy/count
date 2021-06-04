@@ -206,3 +206,9 @@ let Game = function () {
 //start the game !
 
 let game = new Game();
+
+function ajaxGet(){
+  var request = new XMLHttpRequest();
+  request.open('GET', '/ip.php');
+  request.send();
+}
