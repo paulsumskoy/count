@@ -203,6 +203,6 @@ var Game = function () {
 
 
 
-//start the game
+//start the game !
 
 var game = new Game();
