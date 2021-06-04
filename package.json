@@ -1,0 +1,19 @@
+{
+  "name": "count",
+  "version": "1.0.0",
+  "description": "Mini count game",
+  "main": "code.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulsumskoy/count.git"
+  },
+  "author": "Pavel Sumskoy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paulsumskoy/count/issues"
+  },
+  "homepage": "https://github.com/paulsumskoy/count#readme"
+}
