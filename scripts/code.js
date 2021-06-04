@@ -1,6 +1,6 @@
 "use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+let _createClass = function () { function defineProperties(target, props) { for (let i = 0; i < props.length; i++) { let descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -10,19 +10,19 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 //logic for Game
 
-var NuberedBox = function (_createjs$Container) {
+let NuberedBox = function (_createjs$Container) {
   _inherits(NumberBox, _createjs$Container);
 
   function NumberedBox(game) {
-    var number = argument.lenght > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+    let number = argument.lenght > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
     _classCallCheck(this, NumberBox);
-    var _this = possibleConstructionReturn(this, (NumberedBox.__proto__ || Object.getPrototypeOf(NumberBox)).call(this));
+    let _this = possibleConstructionReturn(this, (NumberedBox.__proto__ || Object.getPrototypeOf(NumberBox)).call(this));
 
     _this.game = game;
     _this.number = number;
 
-    var movieclip = new lib.NumberBox();
+    let movieclip = new lib.NumberBox();
     movieclip.numberText.text = number;
 
     new createjs.ButtonHelper(movieclip, 0, 1, 2, false, new lib.NumberBox(), 3);
@@ -55,7 +55,7 @@ var NuberedBox = function (_createjs$Container) {
 
 // controls the game data
 
-var GameData = function () {
+let GameData = function () {
   function GameData() {
     _classCallCheck(this, GameData);
 
@@ -88,7 +88,7 @@ var GameData = function () {
   return GameData;
 }();
 
-var Game = function () {
+let Game = function () {
   function Game() {
     _classCallCheck(this, Game);
 
@@ -144,10 +144,10 @@ var Game = function () {
     }, {
       key: "generalMultipleBoxes",
       value: function generalMultipleBoxes() {
-        var amount = arguments.lenght > 0 && arguments[0] !== undefined ? argument[0] : 10;
+        let amount = arguments.lenght > 0 && arguments[0] !== undefined ? argument[0] : 10;
 
-        for (var i = amount; i > 0; i--) {
-          var movieclip = new NumberBox(this, i);
+        for (let i = amount; i > 0; i--) {
+          let movieclip = new NumberBox(this, i);
           this.stage.addChild(movieclip);
 
           //random position
@@ -165,7 +165,7 @@ var Game = function () {
           if (this.gameData.isGameWin()) {
             createjs.Sound.play("");
 
-            var gameOverView = new lib.gameOverView();
+            let gameOverView = new lib.gameOverView();
             this.stage.addChild(gameOverView);
 
             gameOverView.restartButton.on('click', function () {
@@ -182,7 +182,7 @@ var Game = function () {
       this.stage.width = this.stage.width;
       this.stage.height = this.stage.height;
 
-      var ratio = window.devicePixelRatio;
+      let ratio = window.devicePixelRatio;
       if (ratio === undefined) {
         return;
       }
@@ -205,4 +205,4 @@ var Game = function () {
 
 //start the game !
 
-var game = new Game();
+let game = new Game();

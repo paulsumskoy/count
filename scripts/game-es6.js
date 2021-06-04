@@ -7,7 +7,7 @@ class NumberedBox extends createjs.Container {
     this.game = game;
     this.number = number;
 
-    var movieclip = new lib.NumberedBox();
+    let movieclip = new lib.NumberedBox();
     movieclip.numberText.text = number;
 
     new createjs.ButtonHelper(movieclip, 0, 1, 2, false, new lib.NumberedBox(), 3);
@@ -95,8 +95,8 @@ loadSound() {
     this.generalMultipleBoxes(this.gameData.amountOfBox);
   }
   generalMultipleBoxes(amount=10) {
-    for (var i=amount; i>0; i--){
-      var movieclip = new NumberedBox(this, i);
+    for (let i=amount; i>0; i--){
+      let movieclip = new NumberedBox(this, i);
       this.stage.addChild(movieclip);
 
       // random position
@@ -113,7 +113,7 @@ loadSound() {
       if (this.gameData.isGameWin())  {
         createjs.Sound.play("Game Over");
 
-        var gameOverView = new lib.GameOverView();
+        let gameOverView = new lib.GameOverView();
         this.stage.addChild(gameOverView);
 
         gameOverView.restartButton.on('click', (function() {
@@ -145,4 +145,4 @@ loadSound() {
 }
 
 // start the game
-var game = new Game();
+let game = new Game();
