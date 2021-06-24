@@ -4,7 +4,7 @@
   "description": "Mini count game",
   "main": "code.js",
   "scripts": {
-    "test": "editorconfig-checker --exclude '.git|node-modules|.DS_Store'"
+    "test": "editorconfig-checker"
   },
   "repository": {
     "type": "git",
