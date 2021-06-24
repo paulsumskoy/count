@@ -4,7 +4,7 @@
   "description": "Mini count game",
   "main": "code.js",
   "scripts": {
-    "test": "tests/basic.test.js"
+    "test": ".editorconfig"
   },
   "repository": {
     "type": "git",
