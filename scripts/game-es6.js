@@ -1,3 +1,4 @@
+"use strict";
 // logic for the Count game
 
 class NumberedBox extends createjs.Container {
@@ -47,11 +48,11 @@ class GameData {
   }
 
   isRightNumber (number) {
-    return (number === this.currentNumber)
+    return number === this.currentNumber
   }
 
   isGameWin () {
-    return (this.currentNumber > this.amountOfBox)
+    return this.currentNumber > this.amountOfBox
   }
 }
 
