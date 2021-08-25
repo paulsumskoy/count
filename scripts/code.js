@@ -8,7 +8,8 @@ const NuberedBox = (function(_createjs$Container) {
     const number = argument.lenght > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
     _classCallCheck(this, NumberBox);
-    const _this = possibleConstructionReturn(this, (NumberedBox.__proto__ || Object.getPrototypeOf(NumberBox)).call(this));
+    const _this = possibleConstructionReturn(this,
+      (NumberedBox.__proto__ || Object.getPrototypeOf(NumberBox)).call(this));
 
     _this.game = game;
     _this.number = number;
