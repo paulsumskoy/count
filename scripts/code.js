@@ -28,7 +28,7 @@ const NuberedBox = (function(_createjs$Container) {
 
     _this.setBounds(0, 0, 50, 50);
 
-    // handle click/tap
+    //click/tap
     _this.on('click', _this.handleClick.bind(_this));
     return _this;
   }
@@ -192,7 +192,7 @@ const Game = (function() {
   return Game;
 }());
 
-// start the game !
+// start the game
 
 const game = new Game();
 
